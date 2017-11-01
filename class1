@@ -1,0 +1,158 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text += btn.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+       
+        {
+            Button btn = (Button)sender;
+            textBox1.Text = textBox1.Text + " " + btn.Text + " ";
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text = textBox1.Text + " " + btn.Text + " ";
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text = textBox1.Text + " " + btn.Text + " ";
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            textBox1.Text = textBox1.Text + " " + btn.Text + " ";
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = " ";
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Single r;//r use to keep the result
+            string t = textBox1.Text;//t use to keep the arithmetic fault acess
+            int space = t.IndexOf(' ');//Use to search the location of spacebar
+            string s1 = t.Substring(0,space);//s1 use to keep the first operand
+            char op = Convert.ToChar(t.Substring(space = 1, 1));//op use to keep operators
+            string s2 = t.Substring(space + 3);//s2 use to keep the second operand
+            Single arg1 = Convert.ToSingle(s1);//convert operand from string to single
+            Single arg2 = Convert.ToSingle(s2);
+
+            switch (op)
+            {
+                case '+':
+                    r = arg1 + arg2;
+                    break;
+                 
+                case '*':
+                    r = arg1 * arg2;
+                    break;
+               // case '﹣':
+                   // r = arg1 - arg2;
+                case '/':
+                    r = arg1 / arg2;
+                    break;
+                    if (arg2 == 0)
+                    {
+                        throw new ApplicationException();
+                    }
+                    else
+                    {
+                        r = arg1 / arg2;
+                        break;
+                    }
+                    break;
+                default:
+                    throw new ApplicationException();
+            }
+            textBox1.Text = r.ToString();
+
+
+
+
+
+        }
+    }
+}
